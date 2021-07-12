@@ -27,7 +27,6 @@ const { MongoClient, ObjectId } = require("mongodb");
     Lista de Endpoints CRUD
     Create, Read (Single & All), Update, Delete
     Criar, Ler (Individual & Tudo), Atualizar, Remover
-
     Associamos os endpoints aos verbos de HTTP
     Quando seguimos as convenções, utilizandos os verbos corretos,
     podemos dizer que a nossa aplicação segue os padrões REST
@@ -45,6 +44,7 @@ const { MongoClient, ObjectId } = require("mongodb");
 
     //const filmes = db.collection("filmes");
     const filmes = undefined;
+
     // [GET] - Read All
     app.get("/filmes", async (req, res) => {
         const listaFilmes = await filmes.find().toArray();
@@ -89,8 +89,8 @@ const { MongoClient, ObjectId } = require("mongodb");
 
         res.send("Item removido com sucesso.");
     });
-    
-    app.listen(processs.env.PORT || 3000);
+
+    app.listen(process.env.PORT || 3000);
 
     // Resumo dos endpoints:
     // [POST] - /filmes -> Adicionar um elemento
